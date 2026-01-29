@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Project1_Triviagame</string>
+    <string name="hangman_trivia">Hangman Trivia</string>
+    <string name="log_in">Log In!</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot">Forgot?</string>
+    <string name="don_t_have_an_account_sign_up">Don’t have an account? Sign up!</string>
 </resources>
