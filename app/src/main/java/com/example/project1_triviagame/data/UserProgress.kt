@@ -2,6 +2,7 @@ package com.example.project1_triviagame.data
 
 /**
  * Represents the user's overall progress in the trivia portion of the game.
+ *
  * @property totalQuestions Total number of trivia questions in the current session.
  * @property answeredQuestions Number of questions the user has attempted.
  * @property correctAnswers Number of questions the user has answered correctly.
@@ -27,6 +28,7 @@ enum class HangmanStatus {
 
 /**
  * Tracks the user's progress in a single hangman round.
+ *
  * @property targetWord The word the user is trying to guess.
  * @property revealedLetters Letters that have been correctly guessed and revealed in the word.
  * @property incorrectGuesses Letters guessed by the user that are not in the word.
