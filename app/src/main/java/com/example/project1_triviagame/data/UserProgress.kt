@@ -27,7 +27,6 @@ enum class HangmanStatus {
 
 /**
  * Tracks the user's progress in a single hangman round.
- *
  * @property targetWord The word the user is trying to guess.
  * @property revealedLetters Letters that have been correctly guessed and revealed in the word.
  * @property incorrectGuesses Letters guessed by the user that are not in the word.
