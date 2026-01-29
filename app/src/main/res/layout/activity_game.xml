@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- TOP: Question progress -->
+        <ProgressBar
+            android:id="@+id/questionProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="10"
+            android:progress="0" />
+
+        <TextView
+            android:id="@+id/questionCounter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Progress: 0/10"
+            android:textSize="16sp" />
+
+        <!-- Question text placeholder -->
+        <TextView
+            android:id="@+id/questionText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Question will load from API..."
+            android:textSize="18sp" />
+
+        <!-- HANGMAN placeholder -->
+        <ImageView
+            android:id="@+id/hangmanImage"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="fitCenter"
+            android:src="@android:drawable/ic_menu_help" />
+
+        <ProgressBar
+            android:id="@+id/hangmanProgress"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="6"
+            android:progress="0"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/mistakesText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mistakes: 0/6"
+            android:layout_marginTop="6dp"
+            android:textSize="16sp" />
+
+        <!-- Answers (blank boxes ready for API text) -->
+        <Button
+            android:id="@+id/answerA"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Answer" />
+
+        <Button
+            android:id="@+id/answerB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Answer" />
+
+        <Button
+            android:id="@+id/answerC"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Answer" />
+
+        <Button
+            android:id="@+id/answerD"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Answer" />
+
+    </LinearLayout>
+</ScrollView>
