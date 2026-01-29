@@ -9,6 +9,14 @@ android {
         version = release(36)
     }
 
+    buildFeatures {
+        compose = true
+    }
+
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.8"
+    }
+
     defaultConfig {
         applicationId = "com.example.project1_triviagame"
         minSdk = 28
@@ -35,6 +43,8 @@ android {
     kotlinOptions {
         jvmTarget = "11"
     }
+
+
 }
 
 dependencies {
@@ -43,7 +53,16 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.runtime)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation(platform("androidx.compose:compose-bom:2024.02.00"))
+
+    implementation("androidx.compose.ui:ui")
+    implementation("androidx.compose.material3:material3")
+    implementation("androidx.activity:activity-compose")
+    implementation("androidx.compose.ui:ui-tooling-preview")
+
+    debugImplementation("androidx.compose.ui:ui-tooling")
 }
