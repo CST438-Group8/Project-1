@@ -2,7 +2,6 @@ package com.example.project1_triviagame.data
 
 /**
  * Represents the user's overall progress in the trivia portion of the game.
- *
  * @property totalQuestions Total number of trivia questions in the current session.
  * @property answeredQuestions Number of questions the user has attempted.
  * @property correctAnswers Number of questions the user has answered correctly.
