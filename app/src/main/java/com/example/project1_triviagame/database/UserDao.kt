@@ -3,7 +3,7 @@ package com.example.project1_triviagame.database
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.example.project1_triviagame.database.entities.User
+import com.example.project1_triviagame.database.User
 
 @Dao
 interface UserDao{
