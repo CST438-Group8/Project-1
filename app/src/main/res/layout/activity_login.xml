@@ -51,6 +51,7 @@
             android:layout_height="wrap_content"/>
 
         <Button
+            android:id="@+id/loginButton"
             android:text="@string/log_in"
             android:backgroundTint="#8C817A"
             android:textColor="@android:color/white"
