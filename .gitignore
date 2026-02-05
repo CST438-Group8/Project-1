@@ -192,4 +192,5 @@ fabric.properties
 
 !/gradle/wrapper/gradle-wrapper.jar
 
-# End of https://www.toptal.com/developers/gitignore/api/windows,macos,androidstudio
+# End of https://www.toptal.com/developers/gitignore/api/windows,macos,androidstudio.vscode/
+.windsurf/
