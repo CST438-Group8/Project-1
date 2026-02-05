@@ -1,4 +1,4 @@
-# Project 1 [name pending...]
+# Project 1 [Hangman Trivia]
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -18,11 +18,11 @@
 
 ## Product Spec
 * **Login Screen**
-  * User can...
+  * User can access *Hangman Trivia* using their username and password
 * **Sign Up Screen**
-  * User can...
+  * User can register for *Hangman Trivia* using their username and password
 * **Main Screen**
-  * User can...
+  * User can access different levels of trivia
  
 ## Wireframe
 ...
