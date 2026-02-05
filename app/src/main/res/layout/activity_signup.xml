@@ -33,6 +33,7 @@
             android:layout_height="wrap_content"/>
 
         <EditText
+            android:id="@+id/usernameInput"
             android:hint="@string/username"
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white"
@@ -41,6 +42,7 @@
             android:layout_height="wrap_content"/>
 
         <EditText
+            android:id="@+id/passwordInput"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:textColor="@android:color/white"
@@ -51,6 +53,7 @@
             android:layout_height="wrap_content"/>
 
         <EditText
+            android:id="@+id/confirmPasswordInput"
             android:hint="Confirm Password"
             android:inputType="textPassword"
             android:textColor="@android:color/white"
@@ -61,6 +64,7 @@
             android:layout_height="wrap_content"/>
 
         <Button
+            android:id="@+id/signUpButton"
             android:text="Sign Up!"
             android:backgroundTint="#8C817A"
             android:textColor="@android:color/white"
