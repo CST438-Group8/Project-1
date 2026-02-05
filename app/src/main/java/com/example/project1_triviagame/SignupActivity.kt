@@ -7,7 +7,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 
-class SignUpActivity : AppCompatActivity() {
+class SignupActivity : AppCompatActivity() {
 
     private lateinit var onClickListener: () -> Unit
 
