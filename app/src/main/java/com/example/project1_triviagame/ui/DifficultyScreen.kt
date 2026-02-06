@@ -106,7 +106,6 @@ fun Hardbutton() {
 
 @Preview(showBackground = true)
 @Composable
-fun HomeScreenPreview() {
     Project1_TriviaGameTheme {
         DifficultyScreen()
     }
