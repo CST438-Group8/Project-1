@@ -33,7 +33,8 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun LoginActivity.login(username: String, password: String) {
-        TODO("Not yet implemented")
+    private fun login(username: String, password: String) {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
     }
 }

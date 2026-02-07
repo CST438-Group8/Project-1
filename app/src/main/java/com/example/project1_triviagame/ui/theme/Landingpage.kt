@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.dp
 import com.example.project1_triviagame.ui.theme.Project1_TriviaGameTheme
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(onPlayClick: () -> Unit = {}) {
     val backgroundColor = Color(0xFF0B2A4A)
     val accentColor = Color(0xFF8C817A)
 
@@ -152,7 +152,7 @@ fun HomeScreen() {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Button(
-                    onClick = {},
+                    onClick = onPlayClick,
                     modifier = Modifier
                         .fillMaxWidth()
                         .height(56.dp),
