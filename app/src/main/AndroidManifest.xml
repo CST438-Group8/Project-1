@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,13 +14,14 @@
         android:theme="@style/Theme.Project1_Triviagame">
 
         <activity android:name=".MainActivity" />
+        <activity android:name=".LandingActivity" />
         <activity android:name=".DifficultyActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".game.GameActivity" />
 
         <activity
-            android:name=".LandingActivity"
+            android:name=".TitleActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

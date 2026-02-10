@@ -5,7 +5,13 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import com.example.project1_triviagame.database.AppDatabase
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class LoginActivity : AppCompatActivity() {
 
@@ -34,7 +40,33 @@ class LoginActivity : AppCompatActivity() {
     }
 
     private fun login(username: String, password: String) {
-        val intent = Intent(this, MainActivity::class.java)
-        startActivity(intent)
+        if (username.isBlank() || password.isBlank()) {
+            Toast.makeText(this, "Username and password cannot be empty", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // TODO("double check work")
+        // user reference DAO
+        val userDao = AppDatabase.getDatabase(applicationContext).userDao()
+
+        lifecycleScope.launch(Dispatchers.IO) {
+            // user check database
+            val user = userDao.login(username, password)
+
+            withContext(Dispatchers.Main) {
+                if (user != null) {
+                    // User exists - Login successful
+                    Toast.makeText(this@LoginActivity, "Login successful!", Toast.LENGTH_SHORT).show()
+
+                    val intent = Intent(this@LoginActivity, LandingActivity::class.java)
+                    startActivity(intent)
+
+                    finish()
+                } else {
+                    // user not found or password is incorrect
+                    Toast.makeText(this@LoginActivity, "Invalid username or password", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
     }
 }
