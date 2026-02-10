@@ -3,18 +3,15 @@
 ## Table of Contents
 1. [Overview](#overview)
 2. [Product Spec](#productspec)
-3. [Wireframe](#wireframe)
-4. [Schema](#schema)
+3. [Documentation](#documentation)
+
 
 ## Overview
 ### Description
-...
+*Hangman Trivia* is an app that takes a twist on hangman for users who enjoy a challenging their knowledge on categories of trivia. Testing your knowledge while keeping your hangman alive!
 
 ### API used
-1. [Open Trivia DB](https://opentdb.com/api_config.php)
-2. [The Trivia API](https://the-trivia-api.com/)
-3. [Jepoardy Trivia](https://github.com/abd00s/trivial-buzz?tab=readme-ov-file)
-4. More research needed...
+[Open Trivia DB](https://opentdb.com/api_config.php)
 
 ## Product Spec
 * **Login Screen**
@@ -22,11 +19,36 @@
 * **Sign Up Screen**
   * User can register for *Hangman Trivia* using their username and password
 * **Main Screen**
-  * User can access different levels of trivia
- 
-## Wireframe
-...
+  * User can access different categories of trivia
+* **Difficulty Screen**
+  * User can select different difficulties for trivia
 
-## Schema
-...
+## Documentation
+### 1/28
+* **Inital Commit**
+  * Inital commit made and project created in android studio - by Rbherjaoui
+* **Inital UI**
+  * UI for title, login, and sign up screen - JordanLagura
+* **Storage Space**
+  * Data storage to store users games and progression - RishabhPatel04
+* **Trivia Logic**
+  * Game Activity UI, progress bar, hangman UI, game logic - noegutierrez1
+ 
+### 2/4
+* **Improved UI + Difficulty Screen**
+  * Improved UI in Difficulty Screen and overall app UI, implemented difficulty function/UI - Rbherjaoui
+* **Main Screen**
+  * User friendly UI for main screen - RishabhPatel04
+* **User Database + Login/Signup Logic**
+  * Users can now add register and login and be added to the database - JordanLagura
+* **Improved Landing + Added Logic**
+  * Fixed and updated issues with database and theme scrolling logic - noegutierrez1
+ 
+### 2/6
+* **XML to Comp. UI**
+  * XML files into Composable UI and logic flow from landing page to difficulty page - RishabhPatel04
+
+### 2/9
+* **API added + Database issues + User Authentication**
+  * API implemented, databas fixed, user authentication added - JordanLagura
   
