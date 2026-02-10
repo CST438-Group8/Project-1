@@ -16,6 +16,6 @@ interface UserDao{
     suspend fun login(username: String, password: String): User?
 
     // sign up if user already exists
-    @Query("SELECT * FROM users WHERE username = :username")
+    @Query("SELECT * FROM users WHERE username = :username LIMIT 1")
     suspend fun getUserByUsername(username: String): User?
 }
