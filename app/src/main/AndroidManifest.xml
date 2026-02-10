@@ -13,13 +13,14 @@
         android:theme="@style/Theme.Project1_Triviagame">
 
         <activity android:name=".MainActivity" />
+        <activity android:name=".LandingActivity" />
         <activity android:name=".DifficultyActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".game.GameActivity" />
 
         <activity
-            android:name=".LandingActivity"
+            android:name=".LandingActivity2"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
