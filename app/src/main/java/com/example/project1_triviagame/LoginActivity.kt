@@ -45,6 +45,7 @@ class LoginActivity : AppCompatActivity() {
             return
         }
 
+        // TODO("double check work")
         // user reference DAO
         val userDao = AppDatabase.getDatabase(applicationContext).userDao()
 
