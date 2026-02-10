@@ -20,7 +20,7 @@
         <activity android:name=".game.GameActivity" />
 
         <activity
-            android:name=".LandingActivity2"
+            android:name=".TitleActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

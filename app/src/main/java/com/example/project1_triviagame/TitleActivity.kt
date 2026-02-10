@@ -4,7 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.example.project1_triviagame.ui.LandingScreen
+import com.example.project1_triviagame.ui.TitleScreen
 
 class TitleActivity : ComponentActivity() {
 
@@ -12,7 +12,7 @@ class TitleActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
 
         setContent {
-            LandingScreen(
+            TitleScreen(
                 onTap = {
                     startActivity(
                         Intent(this, LoginActivity::class.java)

@@ -30,7 +30,7 @@ import androidx.compose.foundation.background
 import kotlinx.coroutines.delay
 
 @Composable
-fun LandingScreen(onTap: () -> Unit = {}) {
+fun TitleScreen(onTap: () -> Unit = {}) {
     var showTapText by remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
@@ -75,8 +75,8 @@ fun LandingScreen(onTap: () -> Unit = {}) {
 
 @Preview(showBackground = true)
 @Composable
-fun LandingScreenPreview() {
+fun TitleScreenPreview() {
     Project1_TriviaGameTheme {
-        LandingScreen()
+        TitleScreen()
     }
 }
