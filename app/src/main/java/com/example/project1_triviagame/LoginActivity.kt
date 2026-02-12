@@ -19,21 +19,17 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        // xml views
         val usernameInput = findViewById<EditText>(R.id.usernameInput)
         val passwordInput = findViewById<EditText>(R.id.passwordInput)
         val loginButton = findViewById<Button>(R.id.loginButton)
         val signUpText = findViewById<TextView>(R.id.signUpText)
 
-        // login button logic
         loginButton.setOnClickListener {
-            val username = usernameInput.text.toString()
+            val username = usernameInput.text.toString().trim()
             val password = passwordInput.text.toString()
-
             login(username, password)
         }
 
-        // sign up screen
         signUpText.setOnClickListener {
             startActivity(Intent(this, SignupActivity::class.java))
         }
@@ -45,25 +41,16 @@ class LoginActivity : AppCompatActivity() {
             return
         }
 
-        // TODO("double check work")
-        // user reference DAO
-        val userDao = AppDatabase.getDatabase(applicationContext).userDao()
-
         lifecycleScope.launch(Dispatchers.IO) {
-            // user check database
+            val userDao = AppDatabase.getDatabase(applicationContext).userDao()
             val user = userDao.login(username, password)
 
             withContext(Dispatchers.Main) {
                 if (user != null) {
-                    // User exists - Login successful
                     Toast.makeText(this@LoginActivity, "Login successful!", Toast.LENGTH_SHORT).show()
-
-                    val intent = Intent(this@LoginActivity, LandingActivity::class.java)
-                    startActivity(intent)
-
+                    startActivity(Intent(this@LoginActivity, LandingActivity::class.java))
                     finish()
                 } else {
-                    // user not found or password is incorrect
                     Toast.makeText(this@LoginActivity, "Invalid username or password", Toast.LENGTH_SHORT).show()
                 }
             }
