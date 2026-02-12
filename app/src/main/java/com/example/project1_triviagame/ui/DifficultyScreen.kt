@@ -19,11 +19,11 @@ import com.example.project1_triviagame.ui.theme.background
 import com.example.project1_triviagame.ui.theme.buttoncolor
 
 @Composable
-fun DifficultyScreen() {
+fun DifficultyScreen(onDifficultySelected: (String) -> Unit = {}) {
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(background), //background color from theme
+            .background(background),
         contentAlignment = Alignment.Center
     ) {
         Column(
@@ -37,19 +37,19 @@ fun DifficultyScreen() {
                 fontFamily = AmaticSC,
                 fontWeight = FontWeight.SemiBold
             )
-            Easybutton()
-            Mediumbutton()
-            Hardbutton()
+            Easybutton(onClick = { onDifficultySelected("easy") })
+            Mediumbutton(onClick = { onDifficultySelected("medium") })
+            Hardbutton(onClick = { onDifficultySelected("hard") })
         }
     }
 }
 
 @Composable
-fun Easybutton() {
+fun Easybutton(onClick: () -> Unit = {}) {
     Button(
-        onClick = { println("Easy button clicked!") },
+        onClick = onClick,
         colors = ButtonDefaults.buttonColors(
-            containerColor = buttoncolor  // Using buttoncolor from theme
+            containerColor = buttoncolor
         ),
         modifier = Modifier
             .width(300.dp)
@@ -65,9 +65,9 @@ fun Easybutton() {
 }
 
 @Composable
-fun Mediumbutton() {
+fun Mediumbutton(onClick: () -> Unit = {}) {
     Button(
-        onClick = { println("Medium button clicked!") },
+        onClick = onClick,
         colors = ButtonDefaults.buttonColors(
             containerColor = buttoncolor
         ),
@@ -85,11 +85,11 @@ fun Mediumbutton() {
 }
 
 @Composable
-fun Hardbutton() {
+fun Hardbutton(onClick: () -> Unit = {}) {
     Button(
-        onClick = { println("Hard button clicked!") },
+        onClick = onClick,
         colors = ButtonDefaults.buttonColors(
-            containerColor = buttoncolor  // Using buttoncolor from theme
+            containerColor = buttoncolor
         ),
         modifier = Modifier
             .width(300.dp)
