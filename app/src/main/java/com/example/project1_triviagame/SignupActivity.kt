@@ -8,7 +8,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.project1_triviagame.database.AppDatabase
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class SignupActivity : AppCompatActivity() {
 
@@ -41,8 +43,6 @@ class SignupActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
             }
-
-            signUp(username, password)
         }
 
         // login screen
@@ -56,17 +56,27 @@ class SignupActivity : AppCompatActivity() {
         val userDao = AppDatabase.getDatabase(applicationContext).userDao()
 
         // TODO("double check work, app closes when not validated")
-        lifecycleScope.launch {
-            // user check
-            val existingUser = userDao.getUserByUsername(username)
+        lifecycleScope.launch(Dispatchers.IO) {
+            try {
+                // user check
+                val existingUser = userDao.getUserByUsername(username)
 
-            if (existingUser != null) {
-                Toast.makeText(this@SignupActivity, "Username already taken", Toast.LENGTH_SHORT).show()
-            } else {
-                val newUser = com.example.project1_triviagame.database.User(username = username, password = password)
-                userDao.insert(newUser)
-                Toast.makeText(this@SignupActivity, "Sign up successful!", Toast.LENGTH_SHORT).show()
-                finish()
+                if (existingUser != null) {
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(this@SignupActivity, "Username already taken", Toast.LENGTH_SHORT).show()
+                    }
+                } else {
+                    val newUser = com.example.project1_triviagame.database.User(username = username, password = password)
+                    userDao.insert(newUser)
+                    withContext(Dispatchers.Main) {
+                        Toast.makeText(this@SignupActivity, "Sign up successful!", Toast.LENGTH_SHORT).show()
+                        finish()
+                    }
+                }
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(this@SignupActivity, "Sign up error: ${e.message}", Toast.LENGTH_LONG).show()
+                }
             }
         }
     }

@@ -72,9 +72,7 @@ class LandingActivity : AppCompatActivity() {
         btnPlay.setOnClickListener {
             val selected = currentPosition().coerceIn(0, options.lastIndex)
 
-            // Launch Difficulty screen without a compile-time class reference.
-            // If your class name is different, update the string below.
-            val intent = Intent().setClassName(this, "${packageName}.DifficultyScreen")
+            val intent = Intent(this, DifficultyActivity::class.java)
             intent.putExtra("theme_id", options[selected].id)
             startActivity(intent)
         }

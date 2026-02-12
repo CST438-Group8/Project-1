@@ -50,21 +50,27 @@ class LoginActivity : AppCompatActivity() {
         val userDao = AppDatabase.getDatabase(applicationContext).userDao()
 
         lifecycleScope.launch(Dispatchers.IO) {
-            // user check database
-            val user = userDao.login(username, password)
+            try {
+                // user check database
+                val user = userDao.login(username, password)
 
-            withContext(Dispatchers.Main) {
-                if (user != null) {
-                    // User exists - Login successful
-                    Toast.makeText(this@LoginActivity, "Login successful!", Toast.LENGTH_SHORT).show()
+                withContext(Dispatchers.Main) {
+                    if (user != null) {
+                        // User exists - Login successful
+                        Toast.makeText(this@LoginActivity, "Login successful!", Toast.LENGTH_SHORT).show()
 
-                    val intent = Intent(this@LoginActivity, LandingActivity::class.java)
-                    startActivity(intent)
+                        val intent = Intent(this@LoginActivity, LandingActivity::class.java)
+                        startActivity(intent)
 
-                    finish()
-                } else {
-                    // user not found or password is incorrect
-                    Toast.makeText(this@LoginActivity, "Invalid username or password", Toast.LENGTH_SHORT).show()
+                        finish()
+                    } else {
+                        // user not found or password is incorrect
+                        Toast.makeText(this@LoginActivity, "Invalid username or password", Toast.LENGTH_SHORT).show()
+                    }
+                }
+            } catch (e: Exception) {
+                withContext(Dispatchers.Main) {
+                    Toast.makeText(this@LoginActivity, "Login error: ${e.message}", Toast.LENGTH_LONG).show()
                 }
             }
         }

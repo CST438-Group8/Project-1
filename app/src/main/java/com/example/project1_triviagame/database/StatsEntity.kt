@@ -1,4 +1,12 @@
 package com.example.project1_triviagame.database
 
-class StatsEntity {
-}
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "stats")
+data class StatsEntity(
+    @PrimaryKey(autoGenerate = true)
+    val id: Int = 0,
+    val wins: Int = 0,
+    val losses: Int = 0
+)
