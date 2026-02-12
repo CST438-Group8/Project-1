@@ -51,4 +51,12 @@
 ### 2/9
 * **API added + Database issues + User Authentication**
   * API implemented, databas fixed, user authentication added - JordanLagura
+
+### 2/11
+* **Stats Tracking + Refactor Database Logic**
+  * Tracks wins/losses, improved database stability, fixdd login issues - RishabhPatel04
+* **Room-Based authentication + Tests**
+  * Improved/changed database setup and added unit tests - noegutierrez1
+* **Viewmodel Game Logic**
+  * Updated view model for game logic and updated difficulty screen - Rbherjaoui
   
