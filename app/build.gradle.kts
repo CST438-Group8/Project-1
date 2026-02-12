@@ -56,15 +56,13 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.runtime)
-    implementation(libs.androidx.material3)
 
-    //ViewModel Compose
+    // ViewModel Compose
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
 
-    // ✅ Room (generates AppDatabase_Impl)
+    // Room (generates AppDatabase_Impl)
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
-    implementation(libs.androidx.compiler)
     ksp("androidx.room:room-compiler:2.6.1")
 
     // Testing
@@ -76,6 +74,7 @@ dependencies {
     androidTestImplementation("androidx.room:room-testing:2.6.1")
     androidTestImplementation("androidx.test.espresso:espresso-intents:3.5.1")
 
+    // Compose
     implementation(platform("androidx.compose:compose-bom:2024.02.00"))
     implementation("androidx.compose.ui:ui")
     implementation("androidx.compose.material3:material3")
