@@ -58,6 +58,9 @@ dependencies {
     implementation(libs.androidx.runtime)
     implementation(libs.androidx.material3)
 
+    //ViewModel Compose
+    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.7.0")
+
     // ✅ Room (generates AppDatabase_Impl)
     implementation("androidx.room:room-runtime:2.6.1")
     implementation("androidx.room:room-ktx:2.6.1")
