@@ -14,7 +14,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             Project1_TriviaGameTheme {
                 HomeScreen(onPlayClick = {
-                    startActivity(Intent(this@MainActivity, DifficultyActivity::class.java))
+                    startActivity(Intent(this@MainActivity, LandingActivity::class.java))
                 })
             }
         }

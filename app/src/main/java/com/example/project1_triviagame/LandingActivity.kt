@@ -26,9 +26,7 @@ class LandingActivity : AppCompatActivity() {
     private lateinit var tvLosses: android.widget.TextView
 
     private val options = listOf(
-        HangmanThemeOption(id = 0, textColorHex = "#00E5FF"), // cyan
-        HangmanThemeOption(id = 1, textColorHex = "#FFEA00"), // yellow
-        HangmanThemeOption(id = 2, textColorHex = "#FF4DFF")  // pink
+        HangmanThemeOption(id = 18, textColorHex = "#00E5FF")
     )
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -42,7 +40,6 @@ class LandingActivity : AppCompatActivity() {
         tvWins = findViewById(R.id.tvWins)
         tvLosses = findViewById(R.id.tvLosses)
 
-        // Carousel setup
         recycler.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
         recycler.adapter = HangmanCarouselAdapter(options)
         recycler.setHasFixedSize(true)
@@ -50,8 +47,7 @@ class LandingActivity : AppCompatActivity() {
         val snapHelper = PagerSnapHelper()
         snapHelper.attachToRecyclerView(recycler)
 
-        // Start centered on item 1 (optional)
-        recycler.scrollToPosition(1)
+        recycler.scrollToPosition(0)
 
         fun currentPosition(): Int {
             val lm = recycler.layoutManager as LinearLayoutManager
@@ -68,19 +64,15 @@ class LandingActivity : AppCompatActivity() {
             recycler.smoothScrollToPosition((pos + 1).coerceAtMost(options.lastIndex))
         }
 
-        // Play -> DifficultyScreen
         btnPlay.setOnClickListener {
             val selected = currentPosition().coerceIn(0, options.lastIndex)
+            val categoryId = options[selected].id
 
             val intent = Intent(this, DifficultyActivity::class.java)
-            intent.putExtra("theme_id", options[selected].id)
+            intent.putExtra("category_id", categoryId)
             startActivity(intent)
         }
 
-        // Room counters
-
-
-        // Add some glow-ish elevation to Play button
         btnPlay.elevation = 18f
     }
 }
