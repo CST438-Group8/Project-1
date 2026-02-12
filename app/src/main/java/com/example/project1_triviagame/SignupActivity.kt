@@ -8,11 +8,10 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import com.example.project1_triviagame.database.AppDatabase
+import com.example.project1_triviagame.database.User
 import kotlinx.coroutines.launch
 
 class SignupActivity : AppCompatActivity() {
-
-    private lateinit var onClickListener: () -> Unit
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,7 +26,7 @@ class SignupActivity : AppCompatActivity() {
 
         // Sign up button logic
         signUpButton.setOnClickListener {
-            val username = usernameInput.text.toString()
+            val username = usernameInput.text.toString().trim()
             val password = passwordInput.text.toString()
             val confirmPassword = confirmPasswordInput.text.toString()
 
@@ -36,16 +35,15 @@ class SignupActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            if (password == confirmPassword) {
-                signUp(username, password)
-            } else {
+            if (password != confirmPassword) {
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
+                return@setOnClickListener
             }
 
             signUp(username, password)
         }
 
-        // login screen
+        // back to login screen
         logInText.setOnClickListener {
             finish()
         }
@@ -53,21 +51,22 @@ class SignupActivity : AppCompatActivity() {
 
     // sign up logic room
     private fun signUp(username: String, password: String) {
-        val userDao = AppDatabase.getDatabase(applicationContext).userDao()
-
-        // TODO("double check work, app closes when not validated")
         lifecycleScope.launch {
+            val userDao = AppDatabase.getDatabase(applicationContext).userDao()
+
             // user check
             val existingUser = userDao.getUserByUsername(username)
 
             if (existingUser != null) {
                 Toast.makeText(this@SignupActivity, "Username already taken", Toast.LENGTH_SHORT).show()
-            } else {
-                val newUser = com.example.project1_triviagame.database.User(username = username, password = password)
-                userDao.insert(newUser)
-                Toast.makeText(this@SignupActivity, "Sign up successful!", Toast.LENGTH_SHORT).show()
-                finish()
+                return@launch
             }
+
+            val newUser = User(username = username, password = password)
+            userDao.insert(newUser)
+
+            Toast.makeText(this@SignupActivity, "Sign up successful!", Toast.LENGTH_SHORT).show()
+            finish()
         }
     }
 }
