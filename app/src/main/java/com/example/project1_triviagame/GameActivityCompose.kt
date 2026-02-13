@@ -1,5 +1,6 @@
 package com.example.project1_triviagame
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -19,6 +20,9 @@ class GameActivityCompose : ComponentActivity() {
                     difficulty = difficulty,
                     categoryId = categoryId,
                     onGameFinished = { isWin ->
+                        val intent = Intent(this@GameActivityCompose, LandingActivity::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+                        startActivity(intent)
                         finish()
                     }
                 )
