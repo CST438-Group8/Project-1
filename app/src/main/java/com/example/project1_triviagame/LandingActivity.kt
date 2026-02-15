@@ -30,6 +30,18 @@ class LandingActivity : AppCompatActivity() {
         HangmanThemeOption(id = 18, textColorHex = "#00E5FF")
     )
 
+    override fun onResume() {
+        super.onResume()
+
+        lifecycleScope.launch {
+            val statsDao = AppDatabase.getDatabase(applicationContext).statsDao()
+            val stats = statsDao.getStats()
+
+            tvWins.text = "Wins: ${stats?.wins ?: 0}"
+            tvLosses.text = "Losses: ${stats?.losses ?: 0}"
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing)
