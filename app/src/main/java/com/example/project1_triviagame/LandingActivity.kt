@@ -15,6 +15,7 @@ import com.example.project1_triviagame.ui.HangmanThemeOption
 import com.google.android.material.button.MaterialButton
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
+import com.example.project1_triviagame.ui.TRIVIA_CATEGORIES
 
 class LandingActivity : AppCompatActivity() {
 
@@ -26,9 +27,13 @@ class LandingActivity : AppCompatActivity() {
     private lateinit var tvWins: android.widget.TextView
     private lateinit var tvLosses: android.widget.TextView
 
-    private val options = listOf(
-        HangmanThemeOption(id = 18, textColorHex = "#00E5FF")
-    )
+    private val options = TRIVIA_CATEGORIES.map {
+        HangmanThemeOption(
+            id = it.id,
+            label = it.name,
+            textColorHex = "#00E5FF"
+        )
+    }
 
     override fun onResume() {
         super.onResume()
