@@ -105,4 +105,13 @@ class GameViewModel : ViewModel() {
     fun resetGame() {
         _uiState.value = GameUiState()
     }
+
+    // for testing only
+    fun loadQuestionsForTest(testQuestions: List<TriviaQuestion>) {
+        _uiState.value = _uiState.value.copy(
+            questions = testQuestions,
+            isLoading = false,
+            error = null
+        )
+    }
 }
