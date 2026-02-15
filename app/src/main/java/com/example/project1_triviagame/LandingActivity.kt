@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.example.project1_triviagame.database.AppDatabase
+import com.example.project1_triviagame.database.StatsEntity
 import com.example.project1_triviagame.ui.HangmanCarouselAdapter
 import com.example.project1_triviagame.ui.HangmanThemeOption
 import com.google.android.material.button.MaterialButton
@@ -32,6 +33,21 @@ class LandingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_landing)
+
+        lifecycleScope.launch {
+            val statsDao = AppDatabase.getDatabase(applicationContext).statsDao()
+
+            var stats = statsDao.getStats()
+
+            if (stats == null) {
+                statsDao.upsert(StatsEntity())
+                stats = statsDao.getStats()
+            }
+
+            tvWins.text = "Wins: ${stats?.wins ?: 0}"
+            tvLosses.text = "Losses: ${stats?.losses ?: 0}"
+        }
+
 
         recycler = findViewById(R.id.hangmanCarousel)
         btnLeft = findViewById(R.id.btnLeft)
