@@ -22,6 +22,9 @@ class DifficultyActivity : ComponentActivity() {
                         intent.putExtra("category_id", categoryId)
                         startActivity(intent)
                         finish()
+                    },
+                    onBack = {
+                        finish() // goes back to Themes (Landing)
                     }
                 )
             }
