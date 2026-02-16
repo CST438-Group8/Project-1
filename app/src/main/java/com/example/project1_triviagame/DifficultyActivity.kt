@@ -21,6 +21,7 @@ class DifficultyActivity : ComponentActivity() {
                         intent.putExtra("difficulty", difficulty)
                         intent.putExtra("category_id", categoryId)
                         startActivity(intent)
+                        finish()
                     }
                 )
             }

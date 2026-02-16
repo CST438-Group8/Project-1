@@ -11,9 +11,8 @@ import com.google.android.material.card.MaterialCardView
 
 data class HangmanThemeOption(
     val id: Int,
-    val label: String = "?",
+    val label: String,
     val textColorHex: String
-    // later: val imageResId: Int? or val imageUrl: String?
 )
 
 class HangmanCarouselAdapter(
