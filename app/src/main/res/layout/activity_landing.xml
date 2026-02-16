@@ -5,7 +5,7 @@
     android:id="@+id/root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#05010A">
+    android:background="#0B2A4A">
 
     <!-- Curved neon title -->
     <com.example.project1_triviagame.ui.CurvedTitleView
@@ -23,7 +23,7 @@
         android:layout_height="54dp"
         android:background="@android:color/transparent"
         android:src="@android:drawable/ic_media_previous"
-        android:tint="#FF5A2A"
+        android:tint="#8C817A"
         app:layout_constraintTop_toBottomOf="@id/curvedTitle"
         app:layout_constraintBottom_toTopOf="@id/btnPlay"
         app:layout_constraintStart_toStartOf="parent"
@@ -46,7 +46,7 @@
         android:layout_height="54dp"
         android:background="@android:color/transparent"
         android:src="@android:drawable/ic_media_next"
-        android:tint="#FF5A2A"
+        android:tint="#8C817A"
         app:layout_constraintTop_toBottomOf="@id/curvedTitle"
         app:layout_constraintBottom_toTopOf="@id/btnPlay"
         app:layout_constraintEnd_toEndOf="parent"
@@ -61,10 +61,10 @@
         android:textSize="20sp"
         android:textColor="#FFFFFF"
         android:letterSpacing="0.12"
-        android:backgroundTint="@android:color/transparent"
+        android:backgroundTint="#8C817A"
         app:cornerRadius="14dp"
-        app:strokeWidth="2dp"
-        app:strokeColor="#FF3B1A"
+        app:strokeWidth="0dp"
+        app:strokeColor="#8C817A"
         android:layout_marginStart="28dp"
         android:layout_marginEnd="28dp"
         android:layout_marginTop="10dp"
@@ -90,7 +90,7 @@
             android:layout_height="wrap_content"
             android:text="Wins: 0"
             android:textSize="18sp"
-            android:textColor="#B8FFB8"
+            android:textColor="#FFFFFF"
             android:padding="16dp"/>
 
         <TextView
@@ -99,7 +99,7 @@
             android:layout_height="wrap_content"
             android:text="Losses: 0"
             android:textSize="18sp"
-            android:textColor="#FFB8B8"
+            android:textColor="#FFFFFF"
             android:padding="16dp"/>
     </LinearLayout>
 

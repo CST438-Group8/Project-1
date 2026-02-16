@@ -13,16 +13,16 @@ class CurvedTitleView @JvmOverloads constructor(
     private val text = "HANGCEPTION"
 
     private val glowPaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.parseColor("#FF3B1A") // neon red/orange
+        color = Color.parseColor("#8C817A") // taupe glow
         textAlign = Paint.Align.CENTER
         typeface = Typeface.create(Typeface.DEFAULT_BOLD, Typeface.BOLD)
         textSize = 70f
         // glow
-        setShadowLayer(20f, 0f, 0f, Color.parseColor("#FF3B1A"))
+        setShadowLayer(20f, 0f, 0f, Color.parseColor("#8C817A"))
     }
 
     private val corePaint = Paint(Paint.ANTI_ALIAS_FLAG).apply {
-        color = Color.parseColor("#FFD2C9") // inner bright core
+        color = Color.parseColor("#FFFFFF") // white core
         textAlign = Paint.Align.CENTER
         typeface = Typeface.create(Typeface.DEFAULT_BOLD, Typeface.BOLD)
         textSize = 70f
