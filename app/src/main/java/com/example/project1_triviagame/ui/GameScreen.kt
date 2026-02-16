@@ -1,5 +1,6 @@
 package com.example.project1_triviagame.ui
 
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,17 +15,19 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CircularProgressIndicator
-import androidx.compose.material3.Icon
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Text
+
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -179,11 +182,9 @@ private fun GameContent(
 
     Spacer(modifier = Modifier.height(16.dp))
 
-    // Hangman placeholder icon
-    Icon(
-        painter = painterResource(id = android.R.drawable.ic_menu_help),
-        contentDescription = "Hangman placeholder",
-        tint = if (uiState.gameOver && uiState.isLoss) Color.Red else Color.White,
+    // Hangman drawing - progressively drawn based on mistakes
+    HangmanDrawing(
+        mistakes = uiState.mistakes,
         modifier = Modifier.size(200.dp)
     )
 
@@ -263,6 +264,115 @@ private fun GameContent(
             ) {
                 Text("Next Question", fontSize = 18.sp, fontWeight = FontWeight.Bold)
             }
+        }
+    }
+}
+
+@Composable
+fun HangmanDrawing(mistakes: Int, modifier: Modifier = Modifier) {
+    Canvas(modifier = modifier) {
+        val lineColor = Color.White
+        val bodyColor = Color.White
+        val strokeWidth = 6f
+        val w = size.width
+        val h = size.height
+
+        // Gallows: base
+        drawLine(
+            color = lineColor,
+            start = Offset(w * 0.1f, h * 0.95f),
+            end = Offset(w * 0.6f, h * 0.95f),
+            strokeWidth = strokeWidth,
+            cap = StrokeCap.Round
+        )
+        // Gallows: vertical pole
+        drawLine(
+            color = lineColor,
+            start = Offset(w * 0.25f, h * 0.95f),
+            end = Offset(w * 0.25f, h * 0.05f),
+            strokeWidth = strokeWidth,
+            cap = StrokeCap.Round
+        )
+        // Gallows: top beam
+        drawLine(
+            color = lineColor,
+            start = Offset(w * 0.25f, h * 0.05f),
+            end = Offset(w * 0.65f, h * 0.05f),
+            strokeWidth = strokeWidth,
+            cap = StrokeCap.Round
+        )
+        // Gallows: rope
+        drawLine(
+            color = lineColor,
+            start = Offset(w * 0.65f, h * 0.05f),
+            end = Offset(w * 0.65f, h * 0.18f),
+            strokeWidth = strokeWidth,
+            cap = StrokeCap.Round
+        )
+
+        // 1) Head
+        if (mistakes >= 1) {
+            drawCircle(
+                color = bodyColor,
+                radius = w * 0.08f,
+                center = Offset(w * 0.65f, h * 0.26f),
+                style = Stroke(width = strokeWidth)
+            )
+        }
+
+        // 2) Body
+        if (mistakes >= 2) {
+            drawLine(
+                color = bodyColor,
+                start = Offset(w * 0.65f, h * 0.34f),
+                end = Offset(w * 0.65f, h * 0.58f),
+                strokeWidth = strokeWidth,
+                cap = StrokeCap.Round
+            )
+        }
+
+        // 3) Left arm
+        if (mistakes >= 3) {
+            drawLine(
+                color = bodyColor,
+                start = Offset(w * 0.65f, h * 0.40f),
+                end = Offset(w * 0.50f, h * 0.52f),
+                strokeWidth = strokeWidth,
+                cap = StrokeCap.Round
+            )
+        }
+
+        // 4) Right arm
+        if (mistakes >= 4) {
+            drawLine(
+                color = bodyColor,
+                start = Offset(w * 0.65f, h * 0.40f),
+                end = Offset(w * 0.80f, h * 0.52f),
+                strokeWidth = strokeWidth,
+                cap = StrokeCap.Round
+            )
+        }
+
+        // 5) Left leg
+        if (mistakes >= 5) {
+            drawLine(
+                color = bodyColor,
+                start = Offset(w * 0.65f, h * 0.58f),
+                end = Offset(w * 0.50f, h * 0.75f),
+                strokeWidth = strokeWidth,
+                cap = StrokeCap.Round
+            )
+        }
+
+        // 6) Right leg
+        if (mistakes >= 6) {
+            drawLine(
+                color = bodyColor,
+                start = Offset(w * 0.65f, h * 0.58f),
+                end = Offset(w * 0.80f, h * 0.75f),
+                strokeWidth = strokeWidth,
+                cap = StrokeCap.Round
+            )
         }
     }
 }
