@@ -1,4 +1,4 @@
-# Project 1 - *Hangman Trivia*
+# Project 1 - *Hangception*
 
 ## Table of Contents
 1. [Overview](#overview)
@@ -10,9 +10,9 @@
 
 ## Overview
 ### Description
-*Hangman Trivia* is an app that takes a twist on hangman for users who enjoy a challenging their knowledge on categories of trivia. Testing your knowledge on easy, medium, or hard with a different categories of trivia while keeping your hangman alive!
+*Hangception* is an app that takes a twist on hangman for users who enjoy a challenging their knowledge on categories of trivia. Testing your knowledge on easy, medium, or hard with a different categories of trivia while keeping your hangman alive!
 
-### API Used In *Hangman Trivia*
+### API Used In *Hangception*
 [Open Trivia DB](https://opentdb.com/api_config.php)
 
 ### Triva Categories
@@ -105,15 +105,20 @@
 * **Title Screen**
   * User is introduced into app
 * **Login Screen**
-  * User can access *Hangman Trivia* using their username and password
+  * User can access *Hangception* using their username and password
+  * User can access sign up screen if they do not have an account
 * **Sign Up Screen**
-  * User can register for *Hangman Trivia* using their username and password
+  * User can register for *Hangception* using their username and password
+  * User can return to the login screen
 * **Landing Screen**
-  * User can access different categories of trivia + stats of wins/losses from user
+  * User can access different categories of trivia
+  * User can see their stats of wins/losses counter
 * **Difficulty Screen**
-  * User can select different difficulties for trivia
+  * User can select different difficulties, easy, medium, or hard, for trivia
 * **Game Screen**
-  * User plays trivia questions based off of their chosen difficulty and category
+  * User answers 10 trivia questions based off of their chosen difficulty and category
+  * User can get up to 6 wrong before losing the game
+  * User returns to Landing Screen after game finishes
 
 ## Documentation
 ### 1/28
