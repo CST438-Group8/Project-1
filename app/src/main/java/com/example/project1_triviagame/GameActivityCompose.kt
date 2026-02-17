@@ -1,17 +1,22 @@
 package com.example.project1_triviagame
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import com.example.project1_triviagame.ui.GameScreen
-import com.example.project1_triviagame.ui.theme.Project1_TriviaGameTheme
 import androidx.lifecycle.lifecycleScope
-import kotlinx.coroutines.launch
 import com.example.project1_triviagame.database.AppDatabase
 import com.example.project1_triviagame.database.StatsEntity
+import com.example.project1_triviagame.ui.GameScreen
+import com.example.project1_triviagame.ui.theme.Project1_TriviaGameTheme
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class GameActivityCompose : ComponentActivity() {
+
+    // ✅ prevents double-increment if onGameFinished is called more than once
+    @Volatile
+    private var resultSaved = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,25 +31,30 @@ class GameActivityCompose : ComponentActivity() {
                     categoryId = categoryId,
                     onGameFinished = { isWin ->
 
-                        // Save result to Room
+                        // ✅ guard: ignore repeat calls
+                        if (resultSaved) return@GameScreen
+                        resultSaved = true
+
                         lifecycleScope.launch {
-                            val statsDao = AppDatabase
-                                .getDatabase(applicationContext)
-                                .statsDao()
+                            withContext(Dispatchers.IO) {
+                                val statsDao = AppDatabase
+                                    .getDatabase(applicationContext)
+                                    .statsDao()
 
-                            val stats = statsDao.getStats()
+                                // Ensure the single stats row exists
+                                val stats = statsDao.getStats()
+                                if (stats == null) {
+                                    statsDao.upsert(StatsEntity()) // id=1 wins=0 losses=0
+                                }
 
-                            if (stats == null) {
-                                // First time creation safety
-                                statsDao.upsert(StatsEntity())
+                                if (isWin) {
+                                    statsDao.incrementWins()
+                                } else {
+                                    statsDao.incrementLosses()
+                                }
                             }
 
-                            if (isWin) {
-                                statsDao.incrementWins()
-                            } else {
-                                statsDao.incrementLosses()
-                            }
-
+                            // Back to Landing (DifficultyActivity already finishes when starting this)
                             finish()
                         }
                     }

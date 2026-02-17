@@ -6,11 +6,15 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.runtime.*
 import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.LifecycleEventObserver
+import androidx.lifecycle.compose.LocalLifecycleOwner
 import com.example.project1_triviagame.database.AppDatabase
 import com.example.project1_triviagame.database.StatsEntity
 import com.example.project1_triviagame.ui.LandingScreen
 import com.example.project1_triviagame.ui.TRIVIA_CATEGORIES
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class LandingActivity : ComponentActivity() {
@@ -20,6 +24,8 @@ class LandingActivity : ComponentActivity() {
 
         setContent {
             val context = LocalContext.current
+            val lifecycleOwner = LocalLifecycleOwner.current
+            val scope = rememberCoroutineScope()
 
             var wins by remember { mutableIntStateOf(0) }
             var losses by remember { mutableIntStateOf(0) }
@@ -39,7 +45,19 @@ class LandingActivity : ComponentActivity() {
                 losses = result.second
             }
 
+            // Initial load
             LaunchedEffect(Unit) { loadStats() }
+
+            // ✅ Critical fix: reload stats every time this screen comes back to the front
+            DisposableEffect(lifecycleOwner) {
+                val observer = LifecycleEventObserver { _, event ->
+                    if (event == Lifecycle.Event.ON_RESUME) {
+                        scope.launch { loadStats() }
+                    }
+                }
+                lifecycleOwner.lifecycle.addObserver(observer)
+                onDispose { lifecycleOwner.lifecycle.removeObserver(observer) }
+            }
 
             LandingScreen(
                 categories = TRIVIA_CATEGORIES,
@@ -50,7 +68,13 @@ class LandingActivity : ComponentActivity() {
                     intent.putExtra("category_id", categoryId)
                     context.startActivity(intent)
                 },
-                onRefreshStats = { loadStats() } // used when you return back
+                onRefreshStats = { loadStats() },
+                onLogout = {
+                    val intent = Intent(context, LoginActivity::class.java).apply {
+                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    }
+                    context.startActivity(intent)
+                }
             )
         }
     }

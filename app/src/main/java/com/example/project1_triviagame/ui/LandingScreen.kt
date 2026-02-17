@@ -41,7 +41,8 @@ fun LandingScreen(
     wins: Int,
     losses: Int,
     onPlay: (Int) -> Unit,
-    onRefreshStats: suspend () -> Unit
+    onRefreshStats: suspend () -> Unit,
+    onLogout: () -> Unit
 ) {
     val bg = Color(0xFF0B2A4A)
     val glowBlue = Color(0xFF00E5FF)
@@ -227,7 +228,8 @@ fun LandingScreen(
                 }
             }
 
-            Spacer(modifier = Modifier.weight(1f))
+            // Move Play up slightly (only adjusting vertical spacing here)
+            Spacer(modifier = Modifier.weight(0.65f))
 
             Button(
                 onClick = { onPlay(categories[selectedIndex].id) },
@@ -240,6 +242,26 @@ fun LandingScreen(
             ) {
                 Text(
                     text = "Play",
+                    color = Color.White,
+                    fontSize = 28.sp,
+                    fontFamily = AmaticSC,
+                    fontWeight = FontWeight.SemiBold
+                )
+            }
+
+            Spacer(Modifier.height(14.dp))
+
+            Button(
+                onClick = { onLogout() },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(62.dp)
+                    .padding(horizontal = 28.dp),
+                shape = RoundedCornerShape(14.dp),
+                colors = ButtonDefaults.buttonColors(containerColor = Color(0xFFD32F2F))
+            ) {
+                Text(
+                    text = "Logout",
                     color = Color.White,
                     fontSize = 28.sp,
                     fontFamily = AmaticSC,
