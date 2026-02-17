@@ -36,36 +36,39 @@
   * [Pull Requests](https://github.com/CST438-Group8/Project-1/pulls?q=is%3Apr+is%3Aclosed+author%3AJordanLagura)
   * [Issues](https://github.com/CST438-Group8/Project-1/issues?q=is%3Aissue%20state%3Aclosed%20assignee%3AJordanLagura)
   * What was your role / which stories did you work on
-    * I was responsible for a lot of the backend coding, databases, and working with the API. I implemented the UI for the title, login, and sign up. I worked around a lot with the categories and API appearing on the main screen for users to select their trivia.
+    * I was responsible for a lot of the backend coding, databases, and working with the API. I implemented the UI for the title, login, and sign up.
+    * I worked around a lot with the categories and API appearing on the main screen for users to select their trivia.
   * What was the biggest challenge?
     * The biggest challenge was for me pulling the API information onto the game. 
   * Why was it a challenge?
-    * The reason was I had several ideas of how to implement it, but had some trouble excuting it. The process itself wasn't difficult, but it was definetly tedious making sure each individual file worked in tangent or flowed with each other correctly. Sometimes the app could run but some features wouldn't appear from the API, or even worse, the app would crash trying to pull API data.
+    * The reason was I had several ideas of how to implement it, but had some trouble executing it. The process itself wasn't difficult, but it was definitely tedious making sure each individual file worked in tangent or flowed with each other correctly. Sometimes the app could run but some features wouldn't appear from the API, or even worse, the app would crash trying to pull API data.
   * How was the challenge addressed?
-    * I eventually figured it out, I even had some help from my group memebers when they implemented certain features making it more clear of what direction I had to head towards when implementing the API.
+    * I eventually figured it out, I even had some help from my group members when they implemented certain features making it more clear of what direction I had to head towards when implementing the API.
   * Favorite / most interesting part of this project
     * Working with composable UI was a somewhat newer feature of Android Studio for me, so seeing how it works was interesting to me.
   * If you could do it over, what would you change?
     * Definetly better planning on my part, working with a group or no group, I work by going by whatever is more convient for me to code at the time. However, this way of planning means some featuees get left out or forgotten. As for the project itself, I'd want to add more features for the users to mess around with, like achievements or customizing their hangman.
   * What is the most valuable thing you learned?
-    * Working with Kotlin, while it is very similar to Java, there are noticable differences that gave some insight into how it works with softwares like Android Studio.
+    * Working with Kotlin, while it is very similar to Java, there are noticeable differences that gave some insight into how it works with pieces of software like Android Studio.
 * **Noe Gutierrez - [noegutierrez1](https://github.com/noegutierrez1)**
   * [Pull Requests](https://github.com/CST438-Group8/Project-1/pulls?q=is%3Apr+is%3Aclosed+author%3Anoegutierrez1)
   * [Issues](https://github.com/CST438-Group8/Project-1/issues?q=is%3Aissue%20state%3Aclosed%20assignee%3Anoegutierrez1)
   * What was your role / which stories did you work on
-    * ...
+    * I was responsible for the UI and functionality of the landing page, png's/animations of the themes, and making final UI/technical edits for the application.
   * What was the biggest challenge?
-    * ...
+    * Ensuring the win/loss counter was properly communicating to the database (with persistence) while also refreshing after the user had won or loss the game so that it may appear immediately.
   * Why was it a challenge?
-    * ... 
+    * Multiple classes / composable files had to be tweaked and changed, with a lot of trail and error, so that the entire process worked in unison.
   * How was the challenge addressed?
-    * ...
+    * The issue was resolved by centralizing the win/loss updates inside GameActivityCompose using Room DAO increment queries and ensuring database writes completed before finishing the activity. The Landing screen was then updated to 
+    * reload stats using LaunchedEffect and lifecycle aware refresh logic so the values persist correctly and update immediately upon returning.
   * Favorite / most interesting part of this project
-    * ...
+    * The game activity!!! It is amazing to create a classic trivia game with different themes about different subjects with three difficulties. 
+    * Api implementation for this was simple (granted I didn't do this part) and refreshed cleanly.
   * If you could do it over, what would you change?
-    * ...
+    * I would've immediately implemented supplemental logic to have another hangman as unlocks. I/we also focus a little too heavily on the game logic.
   * What is the most valuable thing you learned?
-    * ...
+    * Users should not even have the slightest clues/thoughts on what is going on the background, immersion makes for the best experience.
 * **Raphael Hadi Berjaoui - [Rberjaoui](https://github.com/Rberjaoui)**
   * [Pull Requests](https://github.com/CST438-Group8/Project-1/pulls?q=is%3Apr+is%3Aclosed+author%3ARberjaoui)
   * [Issues](https://github.com/CST438-Group8/Project-1/issues?q=is%3Aissue%20state%3Aclosed%20assignee%3ARberjaoui)
