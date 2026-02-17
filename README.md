@@ -87,19 +87,19 @@
   * [Pull Requests](https://github.com/CST438-Group8/Project-1/pulls?q=is%3Apr+is%3Aclosed+author%3ARishabhPatel04)
   * [Issues](https://github.com/CST438-Group8/Project-1/issues?q=is%3Aissue%20state%3Aclosed%20assignee%3ARishabhPatel04)
    * What was your role / which stories did you work on
-    * ...
+    * I was responsible for build configuration, authentication with Room database, and implementing the navigation flow between landing, login, signup, and game screens. I also designed the UI for the landing/login/signup pages and implemented the progressive Canvas-drawn hangman figure on the game screen.
   * What was the biggest challenge?
-    * ...
+    * The biggest challenge was database integration. Getting Room set up correctly required resolving multiple issues
   * Why was it a challenge?
-    * ... 
+    * it required resolving complex build configuration issues with KSP and AGP compatibility, finding the correct Room compiler setup after multiple attempts, and properly implementing coroutine-based authentication that initially caused navigation loops when methods were incomplete.
   * How was the challenge addressed?
-    * ...
+    * The database integration challenges were addressed through a systematic approach
   * Favorite / most interesting part of this project
-    * ...
+    * The most interesting part was building the progressive hangman drawing on the game screen.
   * If you could do it over, what would you change?
-    * ...
+    * If I could start over, I would establish build configuration and dependencies first as a team to avoid repeated Gradle conflicts and rework from merging changes. I'd also coordinate navigation architecture upfront to prevent confusion over duplicate activities and ensure clear integration between screens.
   * What is the most valuable thing you learned?
-    * ...
+    * The most valuable thing I learned was how interconnected Android's build system is — a single version mismatch can break compilation with unclear errors. Understanding how to read Gradle errors, trace root causes, and test fixes methodically taught me that getting the foundation right (build config, dependencies, structure) is just as critical as writing feature code.
 
 ## Product Spec
 * **Title Screen**
