@@ -2,8 +2,10 @@
 
 ## Table of Contents
 1. [Overview](#overview)
-2. [Product Spec](#productspec)
-3. [Documentation](#documentation)
+2. [Introduction](#introduction)
+3. [Product Spec](#productspec)
+4. [Documentation](#documentation)
+5. [Conclusion](#conclusion)
 
 
 ## Overview
@@ -20,6 +22,84 @@
 * **Sports**
 * **Computers**
 * **Video Games**
+
+## Introduction
+* **How was communication managed?**
+  * Discord was our main form of communication.
+* **How many stories/issues were initially considered?**
+  * We had considered 5 user stories and about 15 issues.
+* **How many stories/issues were completed?**
+  * We completed 20 issues and 6 user stories.
+ 
+ ### Team Members
+* **Anthony Jordan Lagura - [JordanLagura](https://github.com/JordanLagura)**
+  * [Pull Requests](https://github.com/CST438-Group8/Project-1/pulls?q=is%3Apr+is%3Aclosed+author%3AJordanLagura)
+  * [Issues](https://github.com/CST438-Group8/Project-1/issues?q=is%3Aissue%20state%3Aclosed%20assignee%3AJordanLagura)
+  * What was your role / which stories did you work on
+    * I was responsible for a lot of the backend coding, databases, and working with the API. I implemented the UI for the title, login, and sign up. I worked around a lot with the categories and API appearing on the main screen for users to select their trivia.
+  * What was the biggest challenge?
+    * The biggest challenge was for me pulling the API information onto the game. 
+  * Why was it a challenge?
+    * The reason was I had several ideas of how to implement it, but had some trouble excuting it. The process itself wasn't difficult, but it was definetly tedious making sure each individual file worked in tangent or flowed with each other correctly. Sometimes the app could run but some features wouldn't appear from the API, or even worse, the app would crash trying to pull API data.
+  * How was the challenge addressed?
+    * I eventually figured it out, I even had some help from my group memebers when they implemented certain features making it more clear of what direction I had to head towards when implementing the API.
+  * Favorite / most interesting part of this project
+    * Working with composable UI was a somewhat newer feature of Android Studio for me, so seeing how it works was interesting to me.
+  * If you could do it over, what would you change?
+    * Definetly better planning on my part, working with a group or no group, I work by going by whatever is more convient for me to code at the time. However, this way of planning means some featuees get left out or forgotten. As for the project itself, I'd want to add more features for the users to mess around with, like achievements or customizing their hangman.
+  * What is the most valuable thing you learned?
+    * Working with Kotlin, while it is very similar to Java, there are noticable differences that gave some insight into how it works with softwares like Android Studio.
+* **Noe Gutierrez - [noegutierrez1](https://github.com/noegutierrez1)**
+  * [Pull Requests](https://github.com/CST438-Group8/Project-1/pulls?q=is%3Apr+is%3Aclosed+author%3Anoegutierrez1)
+  * [Issues](https://github.com/CST438-Group8/Project-1/issues?q=is%3Aissue%20state%3Aclosed%20assignee%3Anoegutierrez1)
+  * What was your role / which stories did you work on
+    * ...
+  * What was the biggest challenge?
+    * ...
+  * Why was it a challenge?
+    * ... 
+  * How was the challenge addressed?
+    * ...
+  * Favorite / most interesting part of this project
+    * ...
+  * If you could do it over, what would you change?
+    * ...
+  * What is the most valuable thing you learned?
+    * ...
+* **Raphael Hadi Berjaoui - [Rberjaoui](https://github.com/Rberjaoui)**
+  * [Pull Requests](https://github.com/CST438-Group8/Project-1/pulls?q=is%3Apr+is%3Aclosed+author%3ARberjaoui)
+  * [Issues](https://github.com/CST438-Group8/Project-1/issues?q=is%3Aissue%20state%3Aclosed%20assignee%3ARberjaoui)
+  * What was your role / which stories did you work on
+    * ...
+  * What was the biggest challenge?
+    * ...
+  * Why was it a challenge?
+    * ... 
+  * How was the challenge addressed?
+    * ...
+  * Favorite / most interesting part of this project
+    * ...
+  * If you could do it over, what would you change?
+    * ...
+  * What is the most valuable thing you learned?
+    * ...
+* **Rishabh Patel - [RishabhPatel04](https://github.com/RishabhPatel04)**
+  * [Pull Requests](https://github.com/CST438-Group8/Project-1/pulls?q=is%3Apr+is%3Aclosed+author%3ARishabhPatel04)
+  * [Issues](https://github.com/CST438-Group8/Project-1/issues?q=is%3Aissue%20state%3Aclosed%20assignee%3ARishabhPatel04)
+   * What was your role / which stories did you work on
+    * ...
+  * What was the biggest challenge?
+    * ...
+  * Why was it a challenge?
+    * ... 
+  * How was the challenge addressed?
+    * ...
+  * Favorite / most interesting part of this project
+    * ...
+  * If you could do it over, what would you change?
+    * ...
+  * What is the most valuable thing you learned?
+    * ...
 
 ## Product Spec
 * **Title Screen**
@@ -93,3 +173,12 @@
   * Originally our plan was to create a form of hangman inception, where the user would have a main hangman that can have up to 6 body parts before losing the game. There would be 6 levels of trivia for the 6 body parts of the main hangman, each level would have their own hangman that a user can get up to 6 questions wrong before losing that level of trivia. If they were to get 6 questions wrong, then that would be a body part added to the main hangman.
 * **Reward System**
   * We wanted to give incentive to continue playing the game, wanting the user to feel a sense of achievement for each level they succeded in. We had planned to give users the option to customize their main hangman with diferent styles of cosmetics from the different categories/genres of trivia we offer on our app. You win a level of trivia, you get a cosmetic based on that genre, and it would be like that for easy, medium, hard, and the different categories.
+ 
+## Conclusion
+* **How successful were we?**
+  * Overall, with the short time frame, we as a group got 90% of the features we wanted to implement. With our first time working as a group together and working with kotlin, we consider our project very succesful in our eyes.
+* **What was our largest victory**
+  * The app runs with ZERO bugs! Of course, that should be any app's bare minimum. However, our project for a day had some major gradle issues when we were pulling from main and nothing was working for a while. After we had gotten it fixed, everything after was smooth sailing till the end of the project.
+* **Final assessment?**
+  * With the time constraint, our first time working with kotlin, and exploring new featues of Android Studio, our app came out better than we had planned and expected. We're very proud of the app we've created and vey happy to be able to present it.
+ 
