@@ -70,19 +70,19 @@
   * [Pull Requests](https://github.com/CST438-Group8/Project-1/pulls?q=is%3Apr+is%3Aclosed+author%3ARberjaoui)
   * [Issues](https://github.com/CST438-Group8/Project-1/issues?q=is%3Aissue%20state%3Aclosed%20assignee%3ARberjaoui)
   * What was your role / which stories did you work on
-    * ...
+    * I was resposible for the game logic and any User stories related to the game itself. I made the logic itself and made sure that it was displayed properly through a persistent game state. I also set up Composbale UI so that we can use it instead of XMLs. I also worked on the difficulty screen and difficulty activity so that the user can select a difficulty.
   * What was the biggest challenge?
-    * ...
+    * My biggest challenge was getting a persistent game state and figuring out the game logic. 
   * Why was it a challenge?
-    * ... 
+    * It was challenging because I had to learn how to properly implement game logic in Kotlin while also handling data coming from an API. Since the questions and answers were being pulled dynamically instead of being hardcoded, I had to understand how to manage asynchronous data, update the UI correctly, and maintain a consistent game state. It was difficult at first to structure the logic so that the app could check answers, track progress, and move between questions without breaking when new data was loaded.
   * How was the challenge addressed?
-    * ...
+    * The challenge was addressed through research and learning more about how ViewModels work in Kotlin. I studied how a ViewModel manages and stores UI-related data in a lifecycle-conscious way, which helped me understand how to keep the game state persistent even during screen rotations. By implementing a ViewModel, I was able to separate the game logic from the UI and properly handle the data coming from the API.
   * Favorite / most interesting part of this project
-    * ...
+    * My favorite part was working with Composoble UI in Kotlin, since not only did I learn more about Kotlin but i prefer that the UI is hardcoded rather then use and xml.
   * If you could do it over, what would you change?
-    * ...
+    * I would like to have more realistic with git issues, as I used them more for what could be rather then starter issues I should consider.
   * What is the most valuable thing you learned?
-    * ...
+    * The most valuable thing I learned is Kotlin. Being someone who's favorite coding language is Java, it was important for me to know the diffrence between both. Not just that since it seems that a many android based jobs seems to be switching to Kotlin, I feel as it is ver valuable to know Kotline now.
 * **Rishabh Patel - [RishabhPatel04](https://github.com/RishabhPatel04)**
   * [Pull Requests](https://github.com/CST438-Group8/Project-1/pulls?q=is%3Apr+is%3Aclosed+author%3ARishabhPatel04)
   * [Issues](https://github.com/CST438-Group8/Project-1/issues?q=is%3Aissue%20state%3Aclosed%20assignee%3ARishabhPatel04)
