@@ -87,4 +87,9 @@
   * Hangman now increments with number of losses from user - RishabhPatel04
 * **Overall Improvement In App**
   * Major fixes/implementation to stability, naviagation, themes, and UI - noegutierrez1
-  
+
+### Features We Didn't Get To Implement
+* **Smaller Hangman Within Game**
+  * Originally our plan was to create a form of hangman inception, where the user would have a main hangman that can have up to 6 body parts before losing the game. There would be 6 levels of trivia for the 6 body parts of the main hangman, each level would have their own hangman that a user can get up to 6 questions wrong before losing that level of trivia. If they were to get 6 questions wrong, then that would be a body part added to the main hangman.
+* **Reward System**
+  * We wanted to give incentive to continue playing the game, wanting the user to feel a sense of achievement for each level they succeded in. We had planned to give users the option to customize their main hangman with diferent styles of cosmetics from the different categories/genres of trivia we offer on our app. You win a level of trivia, you get a cosmetic based on that genre, and it would be like that for easy, medium, hard, and the different categories.
