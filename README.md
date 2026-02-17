@@ -13,15 +13,27 @@
 ### API used
 [Open Trivia DB](https://opentdb.com/api_config.php)
 
+### Triva Categories
+* **Music**
+* **Film**
+* **Geography**
+* **Sports**
+* **Computers**
+* **Video Games**
+
 ## Product Spec
+* **Title Screen**
+  * User is introduced into app
 * **Login Screen**
   * User can access *Hangman Trivia* using their username and password
 * **Sign Up Screen**
   * User can register for *Hangman Trivia* using their username and password
-* **Main Screen**
-  * User can access different categories of trivia
+* **Landing Screen**
+  * User can access different categories of trivia + stats of wins/losses from user
 * **Difficulty Screen**
   * User can select different difficulties for trivia
+* **Game Screen**
+  * User plays trivia questions based off of their chosen difficulty and category
 
 ## Documentation
 ### 1/28
