@@ -175,6 +175,10 @@
   * Hangman now increments with number of losses from user - RishabhPatel04
 * **Overall Improvement In App - [#40](https://github.com/CST438-Group8/Project-1/pull/40)**
   * Major fixes/implementation to stability, naviagation, themes, and UI - noegutierrez1
+ 
+### 2/16
+* **Title Change** - [#41](https://github.com/CST438-Group8/Project-1/pull/41)
+  * Title changed from Hangman Trivia to *Hangception* - RishabhPatel04
 
 ### Features We Didn't Get To Implement
 * **Smaller Hangman Within Game**
