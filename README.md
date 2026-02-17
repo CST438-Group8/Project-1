@@ -28,7 +28,7 @@
 * **Inital Commit**
   * Inital commit made and project created in android studio - by Rbherjaoui
 * **Inital UI**
-  * UI for title, login, and sign up screen - JordanLagura
+  * UI for title, login, and sign up screen - JordLagura
 * **Storage Space**
   * Data storage to store users games and progression - RishabhPatel04
 * **Trivia Logic**
@@ -59,4 +59,20 @@
   * Improved/changed database setup and added unit tests - noegutierrez1
 * **Viewmodel Game Logic**
   * Updated view model for game logic and updated difficulty screen - Rbherjaoui
+ 
+### 2/12
+* **Game Runnign**
+  * Test run with computer-based trivia questions - Rbherjaoui
+* **Added StatsDaoTest + TriviaAPITest**
+  * Tests added for Stats and API - JordanLagura
+* **Improved Database Logic + UI**
+  * Improved navigation and tracking stats of users - RishabhPatel04
+
+### 2/15
+* **UI/Database Improvement + Bug Fixes**
+  * Fixed naviagation bugs, stats persitence, integrated scrolling categories, and tests - JordanLagura
+* **Hangman Drawing Logic**
+  * Hangman now increments with number of losses from user - RishabhPatel04
+* **Overall Improvement In App**
+  * Major fixes/implementation to stability, naviagation, themes, and UI - noegutierrez1
   
