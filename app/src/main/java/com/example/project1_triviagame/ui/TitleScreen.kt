@@ -56,7 +56,7 @@ fun TitleScreen(onTap: () -> Unit = {}) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Text(
-            text = "Hangman Trivia",
+            text = "Hangception",
             fontSize = 32.sp,
             fontWeight = FontWeight.Bold,
             color = Color.White
